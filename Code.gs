@@ -1,5 +1,5 @@
 /**
- * CADU - Catatan Keuangan Digital Anda
+ * CADU - Catatan Keuangan Digital Andacadi
  * Backend Google Apps Script + Google Sheets
  * Versi 1.3.0
  *
@@ -706,19 +706,6 @@ function seedCADUDemoPortfolioData() {
 }
 
 /* ========================= PUBLIC API FOR VERCEL PROXY ========================= *
-function doPost(e) {
-  try {
-    const payload = JSON.parse((e && e.postData && e.postData.contents) || '{}');
-    const expectedSecret = PropertiesService.getScriptProperties().getProperty('CADU_API_SECRET');
-    if (!expectedSecret || String(payload.secret || '') !== expectedSecret) throw new Error('Akses API tidak sah.');
-    const result = dispatchCaduApi_(payload.action, payload.args || []);
-    return ContentService.createTextOutput(JSON.stringify({ success: true, data: result }))
-      .setMimeType(ContentService.MimeType.JSON);
-  } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ success: false, error: String(err && err.message || err) }))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-}
 
 function dispatchCaduApi_(action, args) {
   const allowed = {
