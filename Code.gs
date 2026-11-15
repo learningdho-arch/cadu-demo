@@ -763,6 +763,3 @@ function dispatchCaduApi_(action, args) {
   if (JSON.stringify(args).length > 20000) throw new Error('Ukuran permintaan terlalu besar.');
   return allowed[action].apply(null, args);
 }
-function aturSecretCADU() {
-  setCaduApiSecret('CaduDemo!2026-Rahasia#A81xP92mK7');
-}
