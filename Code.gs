@@ -5,7 +5,6 @@
  *
  * PENTING:
  * 1. Hubungkan project Apps Script ke Google Spreadsheet.
- * 2. Jalankan setupCADU() satu kali.
  * 3. Deploy sebagai Web App. Untuk isolasi data per akun,
  *    gunakan Execute as: User accessing the web app.
  * 4. Session.getActiveUser().getEmail() dapat kosong pada konfigurasi
