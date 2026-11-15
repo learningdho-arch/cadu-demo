@@ -709,9 +709,6 @@ function seedCADUDemoPortfolioData() {
 function doPost(e) {
   try {
     const payload = JSON.parse((e && e.postData && e.postData.contents) || '{}');
-    const expectedSecret = PropertiesService.getScriptProperties().getProperty('CADU_API_SECRET');
-    if (!expectedSecret || String(payload.secret || '') !== expectedSecret) throw new Error('Akses API tidak sah.');
-    const result = dispatchCaduApi_(payload.action, payload.args || []);
     return ContentService.createTextOutput(JSON.stringify({ success: true, data: result }))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
