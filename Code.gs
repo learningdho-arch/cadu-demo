@@ -709,9 +709,6 @@ function seedCADUDemoPortfolioData() {
 function doPost(e) {
   try {
     const payload = JSON.parse((e && e.postData && e.postData.contents) || '{}');
-    return ContentService.createTextOutput(JSON.stringify({ success: true, data: result }))
-      .setMimeType(ContentService.MimeType.JSON);
-  } catch (err) {
     return ContentService.createTextOutput(JSON.stringify({ success: false, error: String(err && err.message || err) }))
       .setMimeType(ContentService.MimeType.JSON);
   }
