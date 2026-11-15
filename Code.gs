@@ -705,14 +705,7 @@ function seedCADUDemoPortfolioData() {
   return { success:true, message:'Data portfolio demo berhasil dilengkapi dengan target, setoran, anggaran, pengingat, dan rencana menabung.' };
 }
 
-/* ========================= PUBLIC API FOR VERCEL PROXY ========================= */
-function setCaduApiSecret(secret) {
-  const value = String(secret || '').trim();
-  if (value.length < 32) throw new Error('Secret minimal 32 karakter.');
-  PropertiesService.getScriptProperties().setProperty('CADU_API_SECRET', value);
-  return 'CADU_API_SECRET tersimpan.';
-}
-
+/* ========================= PUBLIC API FOR VERCEL PROXY ========================= *
 function doPost(e) {
   try {
     const payload = JSON.parse((e && e.postData && e.postData.contents) || '{}');
